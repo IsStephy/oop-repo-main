@@ -7,6 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="oop-course-repo" />
     <orderEntry type="library" exported="" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.18.0" level="project" />
     <orderEntry type="library" exported="" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.18.0" level="project" />
     <orderEntry type="library" exported="" name="Maven: com.fasterxml.jackson.core:jackson-core:2.18.0" level="project" />
