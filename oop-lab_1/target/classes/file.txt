@@ -1,0 +1,12 @@
+The development of cybersecurity has been prominent in the last couple of decades, it
+has met multiple obstacles and managed to detect new paths to overcome them. This article aims
+to provide research on the history and current innovations concerning cybersecurity topics, as
+nowadays it affects not only organizations but every person who has an electronic device. We
+achieve this by researching already existing articles and extracting ideas and information that
+would align with the main objective of our paper. By doing this, we managed to outline the
+historical progression of cybersecurity starting from the early computer viruses to the
+sophisticated intrusion systems. Also, we went through and gathered the most impactful and
+innovative creations in the cybersecurity field that combat a multitude of modern cyber threats.
+From what was said above, we conclude that this article highlights how cybersecurity evolved
+and adapted over years of existence, it underscores the importance of resilience in countering new
+threats and protecting digital assets.
