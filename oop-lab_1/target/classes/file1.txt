@@ -1,0 +1,10 @@
+Abstract. This article was created as part of a Problem Based Learning (PBL) project in which
+we investigated delta robots, CNC machines and embedded systems. In response to the imperatives
+of Industry 4.0, this research introduces "DeltaSort", a delta robot system poised to revolutionize
+agricultural sorting processes. Through the integration of advanced gripping mechanisms and
+artificial intelligence-driven object recognition, DeltaSort meticulously assesses and categorizes
+harvested fruits and vegetables, ensuring judicious force application for gentle handling and
+precise sorting. Beyond the confines of agriculture, the system presents a plethora of advantages,
+encompassing heightened productivity, superior precision, elevated safety standards, increased
+production speeds, and non-stop operational capability, rendering it an instrumental solution in
+contemporary automated processes. 
