@@ -1,0 +1,11 @@
+Abstract. The purpose of this article is to explain how a domain-specific language may be useful
+in marketing. The benefits of using a domain-specific language in email automation are examined
+in the article, including increased precision, quicker processing times, reduced error rates, etc.
+DSL-based automation improves the client experience and makes the workflow more seamless.
+The DSL's functionality, grammatical characteristics, and other details are covered in the article
+along with the processes that were used to design it. By focusing on key components such as
+campaign management, personalization, automation, integration, and analytics, this new
+language equips users with the tools and capabilities they need to elevate their email marketing
+efforts in an increasingly digital world. The abstract syntax tree was created using a formal
+grammar as its foundation. The ANTLR 4 parser generator is used as the front-end for the DSL
+built as explained in this article. Python is used to implement the back end.

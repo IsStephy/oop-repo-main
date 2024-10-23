@@ -1,28 +1,30 @@
 package oop.practice;
 
-import java.util.ArrayList;
-import java.util.List;
+
+
 
 public class Main {
     public static void main(String[] args) {
-        int i = Integer.valueOf(args[args.length-1]);
-        List<Display> displays = new ArrayList<>();
+        FileReader readFile = new FileReader();
+        String path = args[0];
+        String fileContent = readFile.readFileIntoString(path);
+        TextData text = new TextData(fileContent);
+        System.out.println("Number of Vowels: " + text.getNumberOfVowels());
+        System.out.println("Number of Consonants: " + text.getNumberOfConsonants());
+        System.out.println("Number of Letters: " + text.getNumberOfLetters());
+        System.out.println("Number of Sentences: " + text.getNumberOfSentences());
+        System.out.println("Longest Word: " + text.getLongestWord());
 
-        Display display1 = new Display(1920, 1080, 401.5f, "Model A");
-        Display display2 = new Display(2560, 1440, 530.3f, "Model B");
-        Display display3 = new Display(1920, 1080, 401.5f, "Model C");
+        for(int i = 1; i <= args.length-1; i++) {
+            path = args[i];
+            fileContent = readFile.readFileIntoString(path);
+            text = new TextData(fileContent);
+            System.out.println("Number of Vowels: " + text.getNumberOfVowels());
+            System.out.println("Number of Consonants: " + text.getNumberOfConsonants());
+            System.out.println("Number of Letters: " + text.getNumberOfLetters());
+            System.out.println("Number of Sentences: " + text.getNumberOfSentences());
+            System.out.println("Longest Word: " + text.getLongestWord());
 
-        displays.add(display1);
-        displays.add(display2);
-        displays.add(display3);
-
-        Assistant assistant = new Assistant("Stewart");
-
-        for (Display display : displays) {
-            assistant.assignDisplay(display);
         }
-
-        assistant.assist();
-        System.out.println(assistant.buyDisplay(displays.get(i)));
     }
 }
