@@ -9,6 +9,8 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/java/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/java/pom.xml" />
         <option value="$PROJECT_DIR$/task_2/pom.xml" />
       </set>
     </option>
