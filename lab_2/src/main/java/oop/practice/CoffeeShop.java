@@ -1,5 +1,3 @@
-package oop.practice;
-
 enum Intensity {
     LIGHT, NORMAL, STRONG
 }
@@ -23,6 +21,10 @@ class Coffee {
     public String getName() {
         return name;
     }
+
+    public void printCoffeeDetails() {
+        System.out.println("Coffee Type: " + name + ", Intensity: " + coffeeIntensity);
+    }
 }
 
 class Cappuccino extends Coffee {
@@ -41,6 +43,11 @@ class Cappuccino extends Coffee {
     public String getCoffee() {
         return coffee;
     }
+
+    @Override
+    public void printCoffeeDetails() {
+        System.out.println("Coffee Type: " + coffee + ", Intensity: " + coffeeIntensity + ", Milk: " + mlOfMilk + "ml");
+    }
 }
 class Americano extends Coffee {
     private int mlOfWater;
@@ -57,6 +64,10 @@ class Americano extends Coffee {
 
     public String getCoffeeName() {
         return coffeeName;
+    }
+    @Override
+    public void printCoffeeDetails() {
+        System.out.println("Coffee Type: " + coffeeName + ", Intensity: " + coffeeIntensity + ", Water: " + mlOfWater + "ml");
     }
 }
 
@@ -76,6 +87,11 @@ class SyrupCappuccino extends Cappuccino {
     @Override
     public String getCoffee() {
         return coffee;
+    }
+
+    @Override
+    public void printCoffeeDetails() {
+        System.out.println("Coffee Type: " + coffee + ", Intensity: " + coffeeIntensity + ", Milk: " + getMlOfMilk() + "ml, Syrup: " + syrup);
     }
 }
 
@@ -98,8 +114,9 @@ class PumpkinSpiceLatte extends Coffee {
         return mgOfPumpkinSpice;
     }
 
-    public String getCoffee() {
-        return coffee;
+    @Override
+    public void printCoffeeDetails() {
+        System.out.println("Coffee Type: " + coffee + ", Intensity: " + coffeeIntensity + ", Milk: " + mlOfMilk + "ml, Pumpkin Spice: " + mgOfPumpkinSpice + "mg");
     }
 }
 
@@ -110,9 +127,9 @@ public class CoffeeShop {
         SyrupCappuccino syrupCappuccino = new SyrupCappuccino(Intensity.LIGHT, 150, SyrupType.VANILLA);
         PumpkinSpiceLatte pumpkinSpiceLatte = new PumpkinSpiceLatte(Intensity.NORMAL, 100, 50);
 
-        System.out.println("Coffee: " + cappuccino.getCoffee() + ", Intensity: " + cappuccino.getCoffeeIntensity() + ", Milk: " + cappuccino.getMlOfMilk() + "ml");
-        System.out.println("Coffee: " + americano.getCoffeeName() + ", Intensity: " + americano.getCoffeeIntensity() + ", Water: " + americano.getMlOfWater() + "ml");
-        System.out.println("Coffee: " + syrupCappuccino.getCoffee() + ", Intensity: " + syrupCappuccino.getCoffeeIntensity() + ", Milk: " + syrupCappuccino.getMlOfMilk() + "ml, Syrup: " + syrupCappuccino.getSyrup());
-        System.out.println("Coffee: " + pumpkinSpiceLatte.getCoffee() + ", Intensity: " + pumpkinSpiceLatte.getCoffeeIntensity() + ", Milk: " + pumpkinSpiceLatte.getMlOfMilk() + "ml, Pumpkin Spice: " + pumpkinSpiceLatte.getMgOfPumpkinSpice() + "mg");
+        cappuccino.printCoffeeDetails();
+        americano.printCoffeeDetails();
+        syrupCappuccino.printCoffeeDetails();
+        pumpkinSpiceLatte.printCoffeeDetails();
     }
 }
