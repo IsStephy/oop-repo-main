@@ -1,3 +1,9 @@
+package Test;
+import Queues.CircularQueue;
+import Queues.Queue;
+import Queues.ArrayQueue;
+import Queues.LinkedQueue;
+
 public class QueueTest {
     public static void main(String[] args) {
         System.out.println("Testing ArrayQueue:");

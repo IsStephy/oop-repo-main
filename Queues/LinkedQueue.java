@@ -1,3 +1,4 @@
+package Queues;
 public class LinkedQueue<T> implements Queue<T> {
     private static class Node<T> {
         T data;
