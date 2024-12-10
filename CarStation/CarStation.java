@@ -4,14 +4,12 @@ import Queues.Queues;
 
 public class CarStation {
     private final Dineable diningService;
-    private final Refuelable electricRefuelingService;
-    private final Refuelable gasRefuelingService;
+    private final Refuelable refuelingService;
     private final Queues<Car> queue;
 
-    public CarStation(Dineable diningService, Refuelable electricRefuelingService, Refuelable gasRefuelingService, Queues<Car> queue) {
+    public CarStation(Dineable diningService, Refuelable refuelingService, Queues<Car> queue) {
         this.diningService = diningService;
-        this.electricRefuelingService = electricRefuelingService;
-        this.gasRefuelingService = gasRefuelingService;
+        this.refuelingService = refuelingService;
         this.queue = queue;
     }
 
@@ -25,16 +23,11 @@ public class CarStation {
             Car car = queue.dequeue();
             System.out.println("Serving car: " + car.getCarId());
 
-            // Serve dinner if required
             if (car.isDining()) {
                 diningService.serveDinner(car.getCarId());
             }
 
-            if (car.getFuelType().equals("ELECTRIC")) {
-                electricRefuelingService.refuel(car.getCarId());
-            } else if (car.getFuelType().equals("GAS")) {
-                gasRefuelingService.refuel(car.getCarId());
-            }
+            refuelingService.refuel(car.getCarId());
         }
 
         System.out.println("All cars have been served!");

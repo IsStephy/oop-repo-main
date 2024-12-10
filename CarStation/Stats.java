@@ -15,10 +15,10 @@ public class Stats {
         int gasConsumption = 0;
 
         for (Car car : carQueue) {
-            if ("electric".equals(car.getFuelType())) {
+            if ("ELECTRIC".equals(car.getFuelType())) {
                 electricCount++;
                 electricConsumption += car.getConsumption();
-            } else if ("gas".equals(car.getFuelType())) {
+            } else if ("GAS".equals(car.getFuelType())) {
                 gasCount++;
                 gasConsumption += car.getConsumption();
             }
@@ -29,9 +29,9 @@ public class Stats {
                 notDiningCount++;
             }
 
-            if ("people".equals(car.getDinnerType())) {
+            if ("PEOPLE".equals(car.getDinnerType())) {
                 peopleCount++;
-            } else if ("robots".equals(car.getDinnerType())) {
+            } else if ("ROBOTS".equals(car.getDinnerType())) {
                 robotsCount++;
             }
         }
