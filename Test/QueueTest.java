@@ -1,25 +1,25 @@
 package Test;
 import Queues.CircularQueue;
-import Queues.Queue;
+import Queues.Queues;
 import Queues.ArrayQueue;
 import Queues.LinkedQueue;
 
 public class QueueTest {
     public static void main(String[] args) {
         System.out.println("Testing ArrayQueue:");
-        Queue<Integer> arrayQueue = new ArrayQueue<>();
+        Queues<Integer> arrayQueue = new ArrayQueue<Integer>();
         testQueue(arrayQueue);
 
         System.out.println("\nTesting CircularQueue:");
-        Queue<Integer> circularQueue = new CircularQueue<>(5);
+        Queues<Integer> circularQueue = new CircularQueue<Integer>(5);
         testQueue(circularQueue);
 
         System.out.println("\nTesting LinkedQueue:");
-        Queue<Integer> linkedQueue = new LinkedQueue<>();
+        Queues<Integer> linkedQueue = new LinkedQueue<Integer>();
         testQueue(linkedQueue);
     }
 
-    private static void testQueue(Queue<Integer> queue) {
+    private static void testQueue(Queues<Integer> queue) {
         System.out.println("Enqueuing 1, 2, 3...");
         queue.enqueue(1);
         queue.enqueue(2);

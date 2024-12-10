@@ -1,5 +1,5 @@
 package Queues;
-public interface Queue<T> {
+public interface Queues<T> {
     void enqueue(T item);
     T dequeue();
     boolean isEmpty();

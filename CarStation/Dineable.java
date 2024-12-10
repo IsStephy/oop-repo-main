@@ -1,5 +1,5 @@
 package CarStation;
 
 public interface Dineable {
-    void serveDinner(String carId);
+    void serveDinner(int carId);
 }

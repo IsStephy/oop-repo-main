@@ -37,11 +37,10 @@ public class Stats {
         }
 
         HashMap<String, Object> results = new HashMap<>();
-
+        results.put("ELECTRIC", electricCount);
         results.put("GAS", gasCount);
         results.put("PEOPLE", peopleCount);
         results.put("ROBOTS", robotsCount);
-        results.put("ELECTRIC", electricCount);
         results.put("DINING", diningCount);
         results.put("NOT_DINING", notDiningCount);
 

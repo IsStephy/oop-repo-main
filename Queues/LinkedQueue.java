@@ -1,5 +1,5 @@
 package Queues;
-public class LinkedQueue<T> implements Queue<T> {
+public class LinkedQueue<T> implements Queues<T> {
     private static class Node<T> {
         T data;
         Node<T> next;

@@ -1,27 +1,27 @@
 package Test;
+
 import CarStation.*;
+import Queues.ArrayQueue;
 
 public class CarStationTest {
     public static void main(String[] args) {
-        System.out.println("Testing Electric Station:");
+        Dineable diningService = new RobotDinner();
         Refuelable electricStation = new EelctricStation();
-        electricStation.refuel("Car_1");
-        electricStation.refuel("Car_2");
-
-        System.out.println("\nTesting Gas Station:");
         Refuelable gasStation = new GasStation();
-        gasStation.refuel("Car_3");
-        gasStation.refuel("Car_4");
 
-        System.out.println("\nTesting People Dinner:");
-        Dineable peopleDinner = new PeopleDinner();
-        peopleDinner.serveDinner("Car_5");
-        peopleDinner.serveDinner("Car_6");
+        ArrayQueue<Car> carQueue = new ArrayQueue<Car>();
 
-        System.out.println("\nTesting Robot Dinner:");
-        Dineable robotDinner = new RobotDinner();
-        robotDinner.serveDinner("Car_7");
-        robotDinner.serveDinner("Car_8");
-        robotDinner.serveDinner("Car_9");
+        CarStation carStation = new CarStation(diningService, electricStation, gasStation, carQueue);
+
+        System.out.println("Adding cars to the CarStation...");
+        carStation.addCar(new Car(1, "ELECTRIC", "ROBOTS", true, 30));
+        carStation.addCar(new Car(2, "ELECTRIC", "ROBOTS", false, 20));
+        carStation.addCar(new Car(3, "ELECTRIC", "PEOPLE", true, 25));
+        carStation.addCar(new Car(4, "GAS", "PEOPLE", true, 25));
+
+        System.out.println("\nServing cars in the CarStation...");
+        carStation.serveCars();
+
+        System.out.println("\nTest completed. Cars were served as follows.");
     }
 }

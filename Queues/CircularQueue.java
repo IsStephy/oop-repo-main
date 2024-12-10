@@ -1,5 +1,5 @@
 package Queues;
-public class CircularQueue<T> implements Queue<T> {
+public class CircularQueue<T> implements Queues<T> {
     private final T[] items;
     private int front, rear, size;
     @SuppressWarnings("unchecked")

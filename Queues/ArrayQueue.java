@@ -1,6 +1,6 @@
 package Queues;
 import java.util.ArrayList;
-public class ArrayQueue<T> implements Queue<T>{
+public class ArrayQueue<T> implements Queues<T>{
     private final ArrayList<T> items = new ArrayList<>();
     @Override
     public void enqueue(T item) {
