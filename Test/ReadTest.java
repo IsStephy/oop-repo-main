@@ -6,8 +6,7 @@ import Queues.Queues;
 import Queues.ArrayQueue;
 import Semaphore.ReadJson;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.HashMap;
 
 public class ReadTest {
     public static void main(String[] args) {
@@ -17,31 +16,23 @@ public class ReadTest {
         System.out.println("Reading cars from JSON files...");
         Queues<Car> carQueue = reader.readCarsFromJsonFiles();
 
-        System.out.println("\nCars in queue:");
-        ArrayQueue<Car> tempQueue = new ArrayQueue<Car>();
+        Queues<Car> tempQueue = new ArrayQueue<Car>();
 
+        System.out.println("\nCars in queue:");
         while (!carQueue.isEmpty()) {
             Car car = carQueue.dequeue();
             tempQueue.enqueue(car);
             System.out.println("Car ID: " + car.getCarId() + ", Type: " + car.getFuelType() + ", Passengers: " + car.getDinnerType() + ", Is Dining: " + car.isDining() + ", Consumption: " + car.getConsumption());
         }
 
-        while (!tempQueue.isEmpty()) {
-            carQueue.enqueue(tempQueue.dequeue());
-        }
-
-        Queue<Car> javaQueue = new LinkedList<>();
-        while (!carQueue.isEmpty()) {
-            Car car = carQueue.dequeue();
-            javaQueue.add(car);
-            tempQueue.enqueue(car);
-        }
 
         while (!tempQueue.isEmpty()) {
             carQueue.enqueue(tempQueue.dequeue());
         }
+
 
         System.out.println("\nStats:");
-        System.out.println(Stats.stats(javaQueue));
+        HashMap<String, Object> stats = Stats.stats(carQueue);
+        System.out.println(stats);
     }
 }

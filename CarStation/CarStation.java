@@ -16,20 +16,23 @@ public class CarStation {
     public void addCar(Car car) {
         queue.enqueue(car);
         System.out.println("Car added to the queue: " + car.getCarId());
+        System.out.println("\n");
     }
 
     public void serveCars() {
         while (!queue.isEmpty()) {
             Car car = queue.dequeue();
-            System.out.println("Serving car: " + car.getCarId());
+            if (car != null) {
+                System.out.println("Serving car: " + car.getCarId());
 
-            if (car.isDining()) {
-                diningService.serveDinner(car.getCarId());
+                if (car.isDining()) {
+                    diningService.serveDinner(car.getCarId());
+                }
+
+                refuelingService.refuel(car.getCarId());
             }
-
-            refuelingService.refuel(car.getCarId());
         }
 
-        System.out.println("All cars have been served!");
+
     }
 }

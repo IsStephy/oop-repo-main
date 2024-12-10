@@ -11,7 +11,7 @@ public class QueueTest {
         testQueue(arrayQueue);
 
         System.out.println("\nTesting CircularQueue:");
-        Queues<Integer> circularQueue = new CircularQueue<Integer>(5);
+        Queues<Integer> circularQueue = new CircularQueue<Integer>();
         testQueue(circularQueue);
 
         System.out.println("\nTesting LinkedQueue:");

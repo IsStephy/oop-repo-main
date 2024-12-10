@@ -1,10 +1,11 @@
 package CarStation;
 
-import java.util.Queue;
+import Queues.Queues;
 import java.util.HashMap;
 
 public class Stats {
-    public static HashMap<String, Object> stats(Queue<Car> carQueue) {
+
+    public static HashMap<String, Object> stats(Queues<Car> carQueue) {
         int electricCount = 0;
         int gasCount = 0;
         int peopleCount = 0;
@@ -14,7 +15,9 @@ public class Stats {
         int electricConsumption = 0;
         int gasConsumption = 0;
 
-        for (Car car : carQueue) {
+        while (!carQueue.isEmpty()) {
+            Car car = carQueue.dequeue();
+
             if ("ELECTRIC".equals(car.getFuelType())) {
                 electricCount++;
                 electricConsumption += car.getConsumption();
@@ -34,7 +37,10 @@ public class Stats {
             } else if ("ROBOTS".equals(car.getDinnerType())) {
                 robotsCount++;
             }
+
         }
+
+
 
         HashMap<String, Object> results = new HashMap<>();
         results.put("ELECTRIC", electricCount);
